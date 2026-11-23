@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Diva Sinha</title>
+<link rel="icon" type="image/svg+xml" href="blue-star.svg">
+<style>
+a {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+a:hover { color:#a1bae3;background-color: #5b78a5; }
+main {margin-left: 210px;}
+nav {min-height: 100vh;}
+.home {
+      min-height: 100vh;
+    padding: 40px;
+    text-align:center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+background-image: 
+    linear-gradient(
+        rgba(161, 186, 227, 0.65),
+        rgba(161, 186, 227, 0.65)
+    ),
+    url("blue-background.png");
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+.home h2 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+.home p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #dce8f8;
+    color: #354f78;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.skill-toggle {
+    background: none;
+    border: none;
+    color: #354f78;
+    font: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.skill-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.skill-card.open .skill-details {
+    max-height: 500px;
+    opacity: 1;
+}
+.skill-card .arrow,
+.project-card .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.skill-card.open .arrow {
+    transform: rotate(180deg);
+}
+
+.project-card.open .arrow {
+    transform: rotate(180deg);
+}
+.project-card {
+    background-color: #dce8f8;
+    color: #354f78;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+.project-toggle {
+    background: none;
+    border: none;
+    color: #354f78;
+    font: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.project-card.open .project-details {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: #e3ebf8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin: 4px;
+    font-size: 14px;
+}
+a.active {
+    background-color: #5b78a5;
+    color: #a1bae3;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        position: sticky !important;
+        top: 0;
+        left: 0 !important;
+        right: 0;
+        z-index: 1000;
+        width: auto !important;
+        min-height: auto;
+        padding: 10px !important;
+        border-radius: 0 0 15px 15px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    nav .sidebar-header,
+    nav hr {
+        display: none;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 3px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .skill-container {
+        grid-template-columns: 1fr;
+    }
+
+    .home h2 {
+        font-size: 38px;
+    }
+
+}
+</style>
+</head>
+<body style= "font-family: Cursive, Brush Script MT; background-color: #a1bae3; color: #fcfdff;">
+<nav style= "background-color:#446191; width:160px; padding:20px; position: fixed; top: 0; left: 0;border-radius: 15px;" >
+<div class="sidebar-header">
+    <h2 style= "text-align: center;">✦ D.S. ✦</h2>
+    <p style= "text-align: center;">MY PORTFOLIO</p>
+</div>
+<hr>
+<a href="#home"> Home </a>
+
+<br>
+<a href="#about"> About </a>
+<br>
+<a href="#projects"> Projects </a>
+<br>
+<a href="#skills"> Skills </a>
+<br>
+<a href="#contact"> Contact </a>
+
+</nav>
+
+<main>
+<h1 style= "text-align:center"> My Professional Portfolio </h1>
+<hr>
+<section id="home" class="home">
+    <p style= "font-size: 20px">WELCOME TO MY PORTFOLIO!</p>
+    <h2>Hello, I'm Diva.</h2>
+    <h3>Student • Aspiring Creator</h3>
+    <p>
+        Exploring technology, creativity,
+        and the possibilities of the digital world.
+    </p>
+</section>
+<hr>
+<section id= "about"> 
+<h2> About Me </h2>
+<p> Hi! My name is Diva Sinha, and I'm currently a freshman studying at Academies @ Englewood, in the Information Systems Academy. I aspire to learn and develop skills that will help me in my future career as an I.T. professional.</p>
+<p> My interest in technology began through exploring coding and learning about hacking. This curiosity eventually developed into a deeper interest in computer science, particularly artificial intelligence and cybersecurity. As of now I hope to become a cybersecurity professional, or, in cooler words, an "Ethical Hacker."</p>
+<p> Outside of academics, I love swimming (in summers), reading books, especially thriller and fantasy novels, and playing the piano. 
+
+<hr>
+</section>
+<section id="projects">
+<h2> Projects </h2>
+<div class="project-card">
+
+    <p>PROJECT 01 · FRESHMAN YEAR</p>
+
+ <button class="project-toggle">
+    Personal Portfolio Website
+    <span class="arrow">▼</span>
+</button>
+    <p>
+        HTML • CSS
+    </p>
+
+    <div class="project-details">
+
+        <p>
+            My first official web development project,
+            created to showcase my background, interests,
+            skills, and projects.
+        </p>
+
+        <hr>
+
+        <h4>Technologies Used</h4>
+        <span class="project-tag">HTML</span>
+        <span class="project-tag">CSS</span>
+
+        <h4>What I've Learned</h4>
+        <ul>
+            <li>Structuring webpages with HTML</li>
+            <li>Styling elements with CSS</li>
+            <li>Creating navigation menus</li>
+            <li>Applying backgrounds, spacing, and layouts</li>
+        </ul>
+
+        <p><b>Status:</b> In Progress</p>
+
+    </div>
+</div>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+
+    <div class="skill-container">
+       <div class="skill-card">
+  <button class="skill-toggle">
+    Web Development
+    <span class="arrow">▼</span>
+</button>
+    <p>HTML • CSS</p>
+
+    <div class="skill-details">
+        <p>Learning to build and style websites using HTML and CSS.</p>
+        <p>Currently developing my personal portfolio!</p>
+    </div>
+</div>
+
+       <div class="skill-card">
+    <button class="skill-toggle">
+        Computer Hardware 
+ <span class="arrow">▼</span>
+    </button>
+
+    <p>PC Disassembly • Reassembly</p>
+
+    <div class="skill-details">
+        <p>Learning about computer components and how they work together.</p>
+        <p>Gained practical experience with PC disassembly and reassembly.</p>
+    </div>
+</div>
+
+      <div class="skill-card">
+    <button class="skill-toggle">
+        Cybersecurity 
+ <span class="arrow">▼</span>
+    </button>
+
+    <p>Area of Interest</p>
+
+    <div class="skill-details">
+        <p>Exploring network security, digital protection, and ethical hacking.</p>
+        <p>Interested in learning how vulnerabilities are identified and secured.</p>
+    </div>
+</div>
+<div class="skill-card">
+    <button class="skill-toggle">
+        Artificial Intelligence 
+ <span class="arrow">▼</span>
+    </button>
+
+    <p>Area of Interest</p>
+
+    <div class="skill-details">
+        <p>Exploring how artificial intelligence systems work and learn.</p>
+        <p>Interested in machine learning and the future of AI technology.</p>
+    </div>
+</div>
+<hr>
+</section>
+<hr>
+<section id="contact">
+    <h2>Let's Connect!</h2>
+
+    <p>
+        I'm always eager to learn, explore new ideas,
+        and connect with others who share an interest
+        in technology.
+    </p>
+
+    <p>
+        Thanks for taking the time to explore my portfolio!
+    </p>
+<p>
+<hr>
+    <h4> Email me: <h4>
+    <a href="mailto:divsin2055@epsd.org">divsin2055@epsd.org</a>
+</p>
+<br>
+<br>
+<p style= "text-align: center;"> . . . </p>
+</section>
+</main>
+<script>
+const headings = document.querySelectorAll("main section h2");
+const navLinks = document.querySelectorAll("nav a");
+
+function updateActiveLink() {
+    let currentSection = "home";
+
+    headings.forEach(heading => {
+        const position = heading.getBoundingClientRect().top;
+
+        if (position <= window.innerHeight) {
+            currentSection = heading.parentElement.id;
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + currentSection) {
+            link.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", updateActiveLink);
+window.addEventListener("resize", updateActiveLink);
+updateActiveLink();
+const skillCards = document.querySelectorAll(".skill-card");
+skillCards.forEach(card => {
+    const button = card.querySelector(".skill-toggle");
+
+    button.addEventListener("click", () => {
+        const wasOpen = card.classList.contains("open");
+
+        skillCards.forEach(otherCard => {
+            otherCard.classList.remove("open");
+        });
+
+        if (!wasOpen) {
+            card.classList.add("open");
+        }
+    });
+});
+const projectCards = document.querySelectorAll(".project-card");
+
+projectCards.forEach(card => {
+    const button = card.querySelector(".project-toggle");
+
+    button.addEventListener("click", () => {
+        const wasOpen = card.classList.contains("open");
+
+        projectCards.forEach(otherCard => {
+            otherCard.classList.remove("open");
+        });
+
+        if (!wasOpen) {
+            card.classList.add("open");
+        }
+    });
+});
+</script>
+</body>
+</html>
+
